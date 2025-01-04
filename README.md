@@ -119,28 +119,6 @@ There is a live demo of this project using [Streamlit](https://streamlit.io/) wh
 streamlit run streamlit_app.py
 ```
 
-## :question: FAQ
-
-1. When running the continuous deployment pipeline, I get an error stating: `No Step found for the name mlflow_deployer`.
-
-   Solution: It happens because your artifact store is overridden after running the continuous deployment pipeline. So, you need to delete the artifact store and rerun the pipeline. You can get the location of the artifact store by running the following command:
-
-   ```bash
-   zenml artifact-store describe
-   ```
-
-   and then you can delete the artifact store with the following command:
-
-   **Note**: This is a dangerous / destructive command! Please enter your path carefully, otherwise it may delete other folders from your computer.
-
-   ```bash
-   rm -rf PATH
-   ```
-
-2. When running the continuous deployment pipeline, I get the following error: `No Environment component with name mlflow is currently registered.`
-
-   Solution: You forgot to install the MLflow integration in your ZenML environment. So, you need to install the MLflow integration by running the following command:
-
    ```bash
    zenml integration install mlflow -y
    ```
