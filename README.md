@@ -79,8 +79,6 @@ service = prediction_service_loader(
 service.predict(...)  # Predict on incoming data from the application
 ```
 
-While this ZenML Project trains and deploys a model locally, other ZenML integrations such as the [Seldon](https://github.com/zenml-io/zenml/tree/main/examples/seldon_deployment) deployer can also be used in a similar manner to deploy the model in a more production setting (such as on a Kubernetes cluster). We use MLflow here for the convenience of its local deployment.
-
 ![training_and_deployment_pipeline](_assets/training_and_deployment_pipeline_updated.png)
 
 ## :notebook: Diving into the code
